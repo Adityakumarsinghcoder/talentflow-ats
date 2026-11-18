@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: talentflow-ats-backend
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: USE_MOCK_DB
+        value: "true" # Set to false if connecting to MongoDB Atlas
+      - key: SEED_DATABASE
+        value: "false"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: CLOUDINARY_CLOUD_NAME
+        value: duzvjhaxj
+      - key: CLOUDINARY_API_KEY
+        value: "661358249965231"
+      - key: CLOUDINARY_API_SECRET
+        value: sJoDSC3Ozr-p5NL546EmoPiZ7Q8
+      - key: MONGODB_URI
+        sync: false
